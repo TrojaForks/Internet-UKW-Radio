@@ -37,18 +37,18 @@ Audio audio(true, I2S_DAC_CHANNEL_BOTH_EN);
 AiEsp32RotaryEncoder rotaryEncoder = AiEsp32RotaryEncoder(ROTARY_ENCODER_A_PIN, ROTARY_ENCODER_B_PIN, ROTARY_ENCODER_BUTTON_PIN, ROTARY_ENCODER_VCC_PIN, ROTARY_ENCODER_STEPS);
 
 
+// WLAN config
 #define WLAN_SSID   CONFIG_WLAN_SSID
 #define WLAN_PASS   CONFIG_WLAN_PASS
 
-const char* c_ssid       = WLAN_SSID;
-const char* c_passphrase = WLAN_PASS;
+const char* c_ssid        = WLAN_SSID;
+const char* c_passphrase  = WLAN_PASS;
 
+const char* c_ssid2       = WLAN_SSID;
+const char* c_passphrase2 = WLAN_PASS;
 
-//String ssid1 =    "UNIX4TROJA65";
-//String password1 = "PASSWORT";
-
-String ssid2 = "SSID2";
-String password2 = "PASSWORT2";
+//String ssid2 = "SSID2";
+//String password2 = "PASSWORT2";
 String mode = "wlan";
 uint8_t Stationsnummer = 0;
 uint32_t lastchange = 0;
@@ -85,7 +85,8 @@ void setup() {
       showText(0,0,"Suche WLAN");
       showText(0,1,ssid2);
       WiFi.disconnect();
-      WiFi.begin(ssid2.c_str(), password2.c_str());
+      //WiFi.begin(ssid2.c_str(), password2.c_str());
+      WiFi.begin(c_ssid2, c_passphrase2);
       while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");
