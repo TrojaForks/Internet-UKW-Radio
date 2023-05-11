@@ -50,6 +50,15 @@ void setup_senderList()
   stationurl[22] = "http://live-radio01.mediahubaustralia.com/RAPW/mp3";
   stationname[23] = "104,6 RTL Berlin";
   stationurl[23] = "http://stream.104.6rtl.com/rtl-live/mp3-192";
-  stationurl[24] = "UKW";
-  stationname[24] = "UKW";
+  stationname[24] = "HITRADIO RTL - 80er";
+  stationurl[24] = "https://web.radio.hitradio-rtl.de/hrrtl-80er/stream/mp3";
+  stationname[25] = "HITRADIO RTL - Oldies";
+  stationurl[25] = "https://web.radio.hitradio-rtl.de/hrrtl-oldies/stream/mp3";
+  stationname[26] = "HITRADIO RTL - PartyMix";
+  stationurl[26] = "https://web.radio.hitradio-rtl.de/hrrtl-maxis/stream/mp3";
+  stationname[27] = "HITRADIO RTL - Weihnachtsrdio";
+  stationurl[27] = "https://web.radio.hitradio-rtl.de/hrrtl-xmas/stream/mp3";
+  stationurl[28] = "UKW";
+  stationname[28] = "UKW";
 }
+

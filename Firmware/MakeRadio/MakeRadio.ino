@@ -12,6 +12,10 @@
 #include <radio.h> /// Source Code auf https://github.com/mathertel/Radio
 #include "AiEsp32RotaryEncoder.h"
 
+// Contains Keys and access tokens.  Path: Arduino/libraries/configuration/Configuration.h
+#include <Configuration.h>
+
+
 #define RESET_PIN 18
 #define MODE_PIN 21 
 #define RELAIS_PIN 16
@@ -32,8 +36,17 @@ LiquidCrystal_I2C lcd(0x3f,20,4);
 Audio audio(true, I2S_DAC_CHANNEL_BOTH_EN);
 AiEsp32RotaryEncoder rotaryEncoder = AiEsp32RotaryEncoder(ROTARY_ENCODER_A_PIN, ROTARY_ENCODER_B_PIN, ROTARY_ENCODER_BUTTON_PIN, ROTARY_ENCODER_VCC_PIN, ROTARY_ENCODER_STEPS);
 
-String ssid =    "SSID";
-String password = "PASSWORT";
+
+#define WLAN_SSID   CONFIG_WLAN_SSID
+#define WLAN_PASS   CONFIG_WLAN_PASS
+
+const char* c_ssid       = WLAN_SSID;
+const char* c_passphrase = WLAN_PASS;
+
+
+//String ssid1 =    "UNIX4TROJA65";
+//String password1 = "PASSWORT";
+
 String ssid2 = "SSID2";
 String password2 = "PASSWORT2";
 String mode = "wlan";
@@ -57,7 +70,8 @@ void setup() {
   WiFi.disconnect();
   WiFi.mode(WIFI_STA);
   //Verbindung zu Netz1
-  WiFi.begin(ssid.c_str(), password.c_str());
+  //WiFi.begin(ssid1.c_str(), password1.c_str());
+  WiFi.begin(c_ssid, c_passphrase);
     showText(0,0,"Suche WLAN ");
     showText(0,1,ssid);
     delay(5000);
