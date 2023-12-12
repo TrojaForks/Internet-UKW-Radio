@@ -2,63 +2,54 @@ void setup_senderList()
 {
   //sender.begin("senderlist", false);
 
-  stationname[0] = "NDR Kultur";
-  stationurl[0] = "http://icecast.ndr.de/ndr/ndrkultur/live/mp3/128/stream.mp3";
-  stationname[1] = "NDR2 Niedersachsen";
-  stationurl[1] = "http://icecast.ndr.de/ndr/ndr2/niedersachsen/mp3/128/stream.mp3";
-  stationname[2] = "NDR1 Hannover";
-  stationurl[2] = "http://icecast.ndr.de/ndr/ndr1niedersachsen/hannover/mp3/128/stream.mp3";
-  stationname[3] = "WDR1";
-  stationurl[3] = "http://wdr-1live-live.icecast.wdr.de/wdr/1live/live/mp3/128/stream.mp3";
-  stationname[4] = "WDR COSMO";
-  stationurl[4] = "http://wdr-cosmo-live.icecast.wdr.de/wdr/cosmo/live/mp3/128/stream.mp3";
-  stationname[5] = "Radio Hagen";
-  stationurl[5] = "http://radiohagen.cast.addradio.de/radiohagen/simulcast/high/stream.mp3";
-  stationname[6] = "Deutschlandfunk";
-  stationurl[6] = "http://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3";
-  stationname[7] = "Bayern3";
-  stationurl[7] = "http://dispatcher.rndfnk.com/br/br3/live/mp3/low";
-  stationname[8] = "Hessen3";
-  stationurl[8] = "http://dispatcher.rndfnk.com/hr/hr3/live/mp3/48/stream.mp3";
-  stationname[9] = "Antenne Bayern";
-  stationurl[9] = "http://stream.antenne.de/antenne";
-  stationname[10] = "Radio 1A Rock";
-  stationurl[10] = "http://stream.1a-webradio.de/saw-rock/";
-  stationname[11] = "Neue Deutsche Welle";
-  stationurl[11] = "http://streams.80s80s.de/ndw/mp3-192/streams.80s80s.de/";
-  stationname[12] = "Bayern Klassik";
-  stationurl[12] = "http://dispatcher.rndfnk.com/br/brklassik/live/mp3/low";
-  stationname[13] = "MDR";
-  stationurl[13] = "http://mdr-284280-1.cast.mdr.de/mdr/284280/1/mp3/low/stream.mp3";
-  stationname[14] = "N-JOY";
-  stationurl[14] = "http://icecast.ndr.de/ndr/njoy/live/mp3/128/stream.mp3";
-  stationname[15] = "RBB";
-  stationurl[15] = "http://dispatcher.rndfnk.com/rbb/rbb888/live/mp3/mid";
-  stationname[16] = "WDR3";
-  stationurl[16] = "http://wdr-wdr3-live.icecastssl.wdr.de/wdr/wdr3/live/mp3/128/stream.mp3";
-  stationname[17] = "WDR 2";
-  stationurl[17] = "http://wdr-wdr2-aachenundregion.icecastssl.wdr.de/wdr/wdr2/aachenundregion/mp3/128/stream.mp3";
-  stationname[18] = "NRW Rockradio";
-  stationurl[18] = "http://rnrw.cast.addradio.de/rnrw-0182/deinrock/low/stream.mp3";
-  stationname[19] = "NRW 90er";
-  stationurl[19] = "http://rnrw.cast.addradio.de/rnrw-0182/dein90er/low/stream.mp3";
-  stationname[20] = "RT1 Rock";
-  stationurl[20] = "http://mp3.hitradiort1.c.nmdn.net/rt1rockwl/livestream.mp3";
-  stationname[21] = "ABC Classic Australia";
-  stationurl[21] = "http://live-radio02.mediahubaustralia.com/2FMW/mp3";
-  stationname[22] = "ABC Radio Australia";
-  stationurl[22] = "http://live-radio01.mediahubaustralia.com/RAPW/mp3";
-  stationname[23] = "104,6 RTL Berlin";
-  stationurl[23] = "http://stream.104.6rtl.com/rtl-live/mp3-192";
-  stationname[24] = "HITRADIO RTL - 80er";
-  stationurl[24] = "https://web.radio.hitradio-rtl.de/hrrtl-80er/stream/mp3";
-  stationname[25] = "HITRADIO RTL - Oldies";
-  stationurl[25] = "https://web.radio.hitradio-rtl.de/hrrtl-oldies/stream/mp3";
-  stationname[26] = "HITRADIO RTL - PartyMix";
-  stationurl[26] = "https://web.radio.hitradio-rtl.de/hrrtl-maxis/stream/mp3";
-  stationname[27] = "HITRADIO RTL - Weihnachtsrdio";
-  stationurl[27] = "https://web.radio.hitradio-rtl.de/hrrtl-xmas/stream/mp3";
-  stationurl[28] = "UKW";
-  stationname[28] = "UKW";
-}
+  stationname[0] = "HIT RTL-Oldies";
+  stationurl[0] = "https://web.radio.hitradio-rtl.de/hrrtl-oldies/stream/mp3";
 
+  stationname[1] = "HIT RTL-Schlager";
+  stationurl[1] = "https://web.radio.hitradio-rtl.de/hrrtl-schlager/stream/mp3";
+
+  stationname[2] = "HIT RTL-80er";
+  stationurl[2] = "https://web.radio.hitradio-rtl.de/hrrtl-80er/stream/mp3";
+
+  stationname[3] = "HIT RTL-PartyMix";
+  stationurl[3] = "https://web.radio.hitradio-rtl.de/hrrtl-maxis/stream/mp3";
+
+  stationname[4] = "Arabella Oldies";
+  stationurl[4] = "https://frontend.streams.arabella.at/arabella-goldenoldies/stream/mp3?aggregator=arabella-playlistfile";
+
+  stationname[5] = "HIT RTL-Xmas";
+  stationurl[5] = "https://web.radio.hitradio-rtl.de/hrrtl-xmas/stream/mp3";
+
+  stationname[6] = "HIT RTL-Xmas Hits";
+  stationurl[6] = "https://stream.rtlradio.de/xms-greatesthits/mp3-128/radiode";
+
+
+  //  https://www.chip.de/artikel/Webradio-Live-Stream-Alle-Sender-im-ueberblick_139924359.html
+
+  stationname[7] = "Schlager";
+  stationurl[7] = "http://stream.laut.fm/schlager.m3u";
+
+  // https://marijanbloggt.at/2023/04/links-zu-streams-der-oesterreichischen-radiosender/120920
+  // https://static.arabella.at/streamadressen/
+
+  stationname[8] = "Radio Wien";
+  stationurl[8] = "https://orf-live.ors-shoutcast.at/wie-q1a.m3u";
+
+  stationname[9] = "Radio OÖ";
+  stationurl[9] = "https://orf-live.ors-shoutcast.at/ooe-q1a.m3u";
+
+  stationname[10] = "Radio NÖ";
+  stationurl[10] = "https://orf-live.ors-shoutcast.at/noe-q1a.m3u";
+
+  stationname[11] = "Ö1";
+  stationurl[11] = "https://orf-live.ors-shoutcast.at/oe1-q1a.m3u";
+
+  stationname[12] = "Ö3";
+  stationurl[12] = "https://orf-live.ors-shoutcast.at/oe3-q1a.m3u";
+
+  stationname[13] = "Arabella Austropop";
+  stationurl[13] = "https://frontend.streams.arabella.at/arabella-austropop/stream/mp3?aggregator=arabella-playlistfile";
+
+  stationurl[14] = "UKW";
+  stationname[14] = "UKW";
+}

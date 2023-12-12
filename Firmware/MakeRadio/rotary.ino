@@ -7,7 +7,7 @@ void wlan_rotary_loop()
     if (v < STATIONS) {
       Stationsnummer = v;
       showText(0,0,String(Stationsnummer+1));
-      showText(4,0,stationname[Stationsnummer]);
+      showText(Stat_Pos_x2,0,stationname[Stationsnummer]);
       lastchange = millis();
     }
   }
@@ -18,7 +18,7 @@ void wlan_rotary_loop()
     Serial.println("zurück");
     Stationsnummer = actStation;
     showText(0,0,String(Stationsnummer+1));
-    showText(4,0,stationname[Stationsnummer]);
+    showText(Stat_Pos_x2,0,stationname[Stationsnummer]);
   }
   
   //Encoder gedrückt
@@ -28,8 +28,8 @@ void wlan_rotary_loop()
     lastchange = 0;
     if (Stationsnummer == STATIONS-1 && mode == "wlan") {
         mode = "ukw";
-        Serial.println("Wechsel auf:");
-        Serial.print(mode);
+        Serial.print("Wechsel auf: ");
+        Serial.println(mode);
         lcd.clear();
         showText(0,0,"Wechsel auf UKW");
         delay(1000);
@@ -37,8 +37,8 @@ void wlan_rotary_loop()
     }
     else if (Stationsnummer == STATIONS-1 && mode == "ukw") {
         mode = "wlan";
-        Serial.println("Wechsel auf:");
-        Serial.print(mode);
+        Serial.print("Wechsel auf: ");
+        Serial.println(mode);
         lcd.clear();
         showText(0,0,"Wechsel auf WLAN");
         Stationsnummer = 0;
@@ -48,10 +48,11 @@ void wlan_rotary_loop()
     else {   
     if (Stationsnummer < STATIONS && mode == "wlan") {
         //mode = "wlan";
-        Serial.printf("Active station %s\n",stationname[Stationsnummer]);
+        Serial.print("Active station ");
+        Serial.println(stationname[Stationsnummer]);
         lcd.clear();
         showText(0,0,String(Stationsnummer+1));
-        showText(4,0,stationname[Stationsnummer]);
+        showText(Stat_Pos_x2,0,stationname[Stationsnummer]);
         audio.connecttohost(stationurl[Stationsnummer]);
     }
   }
@@ -66,7 +67,7 @@ void ukw_rotary_loop()
       Frequenz = Frequenz + UKW_STEP;
       radio.setFrequency(Frequenz);
       UKW_Frequenz();
-      Serial.println(float(radio.getFrequency()/100));
+      Serial.println(float(radio.getFrequency())/100);
     }
 
     //Encoder entgegen Uhrzeigersinjn gedreht
@@ -74,7 +75,7 @@ void ukw_rotary_loop()
       Frequenz = Frequenz - UKW_STEP;
       radio.setFrequency(Frequenz);
       UKW_Frequenz();
-      Serial.println(float(radio.getFrequency()/100));
+      Serial.println(float(radio.getFrequency())/100);
     }
     if (Frequenz < UKW_MIN) {
       Frequenz = UKW_MAX;
@@ -88,8 +89,8 @@ void ukw_rotary_loop()
   {
     if (mode == "ukw") {
         mode = "wlan";
-        Serial.println("Wechsel auf:");
-        Serial.print(mode);
+        Serial.print("Wechsel auf: ");
+        Serial.println(mode);
         lcd.clear();
         showText(0,0,"Wechsel auf WLAN");
         delay(500);
@@ -97,8 +98,12 @@ void ukw_rotary_loop()
         Serial.println(mode);
         Stationsnummer = 0;
         rotaryEncoder.reset(Stationsnummer);
-        Serial.print(Stationsnummer);
+        Serial.print("Stationsnummer: ");
+        Serial.println(Stationsnummer);
         audio.connecttohost(stationurl[Stationsnummer]);
+        delay(500);
+        showText(0,0,String(Stationsnummer+1));
+        showText(Stat_Pos_x2,0,stationname[Stationsnummer]);  
     }
   }
 }

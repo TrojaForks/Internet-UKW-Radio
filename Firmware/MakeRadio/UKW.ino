@@ -6,7 +6,7 @@ void UKW_Frequenz() {
 }
 
 void RDSAnzeige(const char *name) {
-  Serial.print("RDS:");
+  Serial.print("RDS: ");
   Serial.println(name);
   showText(0,1,name);
 }
@@ -26,7 +26,8 @@ void UKW_setup() {
     delay(4000);
     while (1) {};
   };
-  radio.setBandFrequency(RADIO_BAND_FM, UKW_MIN);
+  //radio.setBandFrequency(RADIO_BAND_FM, UKW_MIN);
+  radio.setBandFrequency(RADIO_BAND_FM, UKW_DEF_FREQ);
   radio.setMono(false);
   radio.setMute(false);
   radio.setVolume(radio.getMaxVolume());
